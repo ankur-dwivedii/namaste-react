@@ -1,15 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "This is Namaste React 🚀"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2x" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-]);
+// React Element
+const number = (<h2>1000</h2>);
+
+const Title = () => (
+  <h1 className="head" tabIndex="5">
+    {" "}
+    Namaste React using JSX 🚀
+  </h1>
+);
+// React Functional Component - fxn that returns a JSX code / React Element
+// TO write js inside JSX use {}
+const HeadingComponent = () => (
+  <div id="container">
+    {number}
+    <Title />
+    <h1 className="heading">Namaste React From Functional Component 🚀</h1>
+  </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComponent />);
